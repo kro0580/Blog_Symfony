@@ -58,7 +58,7 @@ class BlogController extends AbstractController
         {
             if(!$article->getId())
             {
-                $article->setCreatedAt(new \DateTime());
+                $article->setCreatedAt(new \DateTime('Europe/Paris'));
             }
 
             $manager->persist($article);
@@ -86,7 +86,7 @@ class BlogController extends AbstractController
 
         if($form->isSubmitted() && $form->isValid())
         {
-            $comment->setCreatedAt(new \DateTime())
+            $comment->setCreatedAt(new \DateTime('Europe/Paris'))
                     ->setArticle($article);
 
             $manager->persist($comment);
